@@ -15,10 +15,16 @@ class Item {
       return { ...item };
     }
   }
-}
-
-function fail(item) {
-  return { ...item };
+  fail(item) {
+    if(item.enhancement < 15){
+      item.enhancement -= 5;
+    } 
+    else if (item.enhancement === 15 ){
+      item.enhancement -= 10;
+    }else {
+      item.enhancement -= 1;
+    }
+  }
 }
 
 function get(item) {
@@ -27,6 +33,5 @@ function get(item) {
 
 module.exports = {
   Item,
-  fail,
   get
 };
