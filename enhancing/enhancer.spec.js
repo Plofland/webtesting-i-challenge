@@ -35,12 +35,22 @@ describe('item class', () => {
   });
 
   describe('Item class methods', () => {
+    //Repair Method
     it('Item class has a repair method', () => {
       expect(newItem.repair).toBeInstanceOf(Function);
     });
-    newItem.repair(item);
-    it('repair method return a value of 100', () => {
+    it('repair method returns a value of 100', () => {
+      newItem.repair(newItem);
       expect(newItem.durability).toEqual(100);
+    });
+
+    //Success Method
+    it('Item class has an enchance method', () => {
+      expect(newItem.success).toBeInstanceOf(Function);
+    });
+    it('success method returns newItem enhance level + 1', () => {
+      newItem.success(newItem);
+      expect(newItem.enhancement).toEqual(4);
     });
   });
 });
