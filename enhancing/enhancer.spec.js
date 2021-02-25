@@ -62,22 +62,22 @@ describe('item class', () => {
         expect(newItem.fail).toBeInstanceOf(Function);
       });
 
-      //Case 1: Fail Method enhancement < 15
+      //Case 1: Fail Method if enhancement < 15
       it('fail method returns enhancement level - 5', () => {
         newItem.fail(newItem);
         expect(newItem.enhancement).toEqual(3);
       });
 
-      //Case 2: Fail Method enhancement === 15
-      newItem2 = new Item('bronze dagger', 5, 15);
+      //Case 2: Fail Method if enhancement === 15
+      let newItem2 = new Item('bronze dagger', 5, 15);
 
       it('fail method returns enhancement level - 10', () => {
         newItem2.fail(newItem2);
         expect(newItem2.enhancement).toEqual(5);
       });
 
-      //Case 3: Fail Method enhancement > 15
-      newItem3 = new Item('glass dagger', 5, 18);
+      //Case 3: Fail Method if enhancement > 15
+      let newItem3 = new Item('glass dagger', 5, 18);
 
       it('fail method returns enhancement level - 10', () => {
         newItem3.fail(newItem3);
